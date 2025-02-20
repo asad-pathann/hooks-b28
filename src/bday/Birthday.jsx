@@ -14,19 +14,19 @@ const Birthday = () => {
     change.length == 0 ? setchange([bedata]) : setchange([]);
   };
 
-  const removeone = (id) => {
-    const newone = change.filter((items, index) => {
-      return items.id !== id;
+  const remove_one = (id) => {
+    const NewId = change.filter((bok, net) => {
+      return bok.id !== id;
     });
-    setchange(newone);
   };
-
+  setchange(NewId);
+  // setchange(any);
   return (
     <>
       <div className="container w-full xl:w-[40%] lg:w-[45%] sm:w-[60%] mx-auto shadow-lg shadow-amber-100 p-4 ">
         <h3 className="text-center text-5xl ">{change.length} birthay today</h3>
         {change.map((item, index) => {
-          return <Single removeone={removeone} {...item} key={index} />;
+          return <Single remove={remove_one} {...item} key={index} />;
         })}
 
         <button

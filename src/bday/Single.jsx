@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 
-const Single = ({ image, name, id, age, removeone }) => {
+const Single = ({ image, name, id, age, remove }) => {
   return (
     <>
       <div className="flex justify-between items-center shadow p-5  ">
@@ -18,8 +18,11 @@ const Single = ({ image, name, id, age, removeone }) => {
             <p className="text-gray-500">{age} usranme</p>
           </div>
         </div>
-        <div className="bg-red-600 p-3 flex justify-center items-center cursor-pointer [clip-path:circle()] w-[40px] h-[40px]">
-          <FaTrash onClick={() => removeone(id)} color="white" size={"20px"} />
+        <div
+          onClick={() => remove(id)}
+          className="bg-red-600 p-3 flex justify-center items-center cursor-pointer [clip-path:circle()] w-[40px] h-[40px]"
+        >
+          <FaTrash color="white" size={"20px"} />
         </div>
       </div>
     </>
